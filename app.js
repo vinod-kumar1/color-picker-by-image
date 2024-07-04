@@ -1,5 +1,4 @@
 let canvas = document.getElementById("canvas");
-let container = document.getElementById("img");
 let ctx = canvas.getContext("2d");
 let preview = document.getElementById("preview");
 let hex = document.getElementById("hex");
@@ -7,15 +6,15 @@ let color;
 
 let image = new Image();
 image.crossOrigin = "anonymous";
-image.src="https://imgs.search.brave.com/VBKRO-efkoVhS4Z6OKvk5B6MMLXpfFCUd-MG89vkGzE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aHRtbGNzc2NvbG9y/LmNvbS9pbWFnZXMv/Y29sb3Jfc3BlY3Ry/dW0ucG5n"
+image.src="https://imgs.search.brave.com/6DeTpoBLnFCDXIuvuX7lbq5Hz1T3q82bEcf3aXZyS0Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odG1s/Y29sb3Jjb2Rlcy5j/b20vYXNzZXRzL2lt/YWdlcy9odG1sLWNv/bG9yLWNvZGVzLWNv/bG9yLXR1dG9yaWFs/cy5qcGc"
 image.width = 200
 image.height = 200
 // document.querySelector("body").appendChild(image); not appening the image to the document as it just created to get referenced by the canvas
 
 image.onload = function () {
-  canvas.width = container.width;
-  canvas.height = container.height;
-  ctx.drawImage(image, 0, 0, container.clientWidth, container.clientHeight);
+  canvas.width = image.width;
+  canvas.height = image.height;
+  ctx.drawImage(image, 0, 0, image.width, image.height);
 };
 
 canvas.addEventListener("mousemove", (e) => {
@@ -23,9 +22,7 @@ canvas.addEventListener("mousemove", (e) => {
   let data = ctx.getImageData(e.clientX - x.left, e.clientY - x.top, 1, 1).data;
   let [r, g, b, a] = data;
   let cssColor = `rgba(${r} , ${g} , ${b}, ${a})`;
-  // console.log(cssColor);
   color = rgbaToHex(r, g, b, a);
-  console.log(r, g, b, a);
   hex.innerHTML = `Hex value is ${color}`;
   preview.style.backgroundColor = cssColor;
 });

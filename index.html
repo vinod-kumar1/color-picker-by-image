@@ -7,18 +7,18 @@
     <title>HTML + CSS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body style="background-color: rgb(9, 9, 17);color: white;">
     <div id="container">
       <h2>Css color picker</h2>
       <canvas
         id="canvas"
         width="60%"
         height="60%"
-        style="opacity: 1;"
+        style="border-radius: 1rem;"
         onClick="copyColor()"
       ></canvas>
-      <p>Hover over the canvas & click to copy</p>
-      <p>Preview colorsd</p>
+      <p>Hover over the canvas & click to copy the CSS hex code</p>
+      <p>Preview color here</p>
       <div
         id="preview"
         style="
@@ -30,14 +30,7 @@
       ></div>
       <p id="hex">Hex value is</p>
     </div>
-    <img
-      src=" https://imgs.search.brave.com/PsImpbnORutHdgirCKSIhQj4FcSMa8gPDBFXsDo8lr4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9l/L2U3L1NWRzEuMV9D/b2xvcl9Td2F0Y2gu/c3Zn"
-      width="200px"
-      id="img"
-      height="200px"
-      alt=""
-      style="opacity: 0; object-fit: cover;"
-    />
+    <p>Note -> <i>You can set the images url in <a target="_blank" style="color: white;" href="https://github.com/vinod-kumar1/color-picker-by-image/blob/ddea86aef2ffad8006c774a06a53dddc04f7a571/app.js#L10">app.js</a> file for different images</i></p>
   </body>
   <script src="./app.js"></script>
 </html>
