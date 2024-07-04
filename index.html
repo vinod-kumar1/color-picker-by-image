@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h2>Css color picker</h2>
+      <canvas
+        id="canvas"
+        width="60%"
+        height="60%"
+        style="opacity: 1;"
+        onClick="copyColor()"
+      ></canvas>
+      <p>Hover over the canvas & click to copy</p>
+      <p>Preview colorsd</p>
+      <div
+        id="preview"
+        style="
+          border: 1px solid black;
+          width: 25vw;
+          height: 20vh;
+          background-color: white;
+        "
+      ></div>
+      <p id="hex">Hex value is</p>
+    </div>
+    <img
+      src=" https://imgs.search.brave.com/PsImpbnORutHdgirCKSIhQj4FcSMa8gPDBFXsDo8lr4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9l/L2U3L1NWRzEuMV9D/b2xvcl9Td2F0Y2gu/c3Zn"
+      width="200px"
+      id="img"
+      height="200px"
+      alt=""
+      style="opacity: 0; object-fit: cover;"
+    />
+  </body>
+  <script src="./app.js"></script>
+</html>
